@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import { Home, User, BookOpen, Mail, Settings } from "lucide-react";
@@ -18,11 +18,20 @@ export const SpeedNavigation = () => {
     item.path === "/" ? location.pathname === "/" : location.pathname.startsWith(item.path)
   );
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [location.pathname]);
+
+  const handleLinkClick = () => {
+    setIsExpanded(false);
+  };
+
   return (
     <motion.div
-      className="fixed left-6 top-1/2 -translate-y-1/2 z-50"
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      className="fixed top-6 right-6 z-50"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.3 }}
     >
       {/* Main Navigation Circle */}
@@ -78,10 +87,10 @@ export const SpeedNavigation = () => {
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              className="absolute left-24 top-1/2 -translate-y-1/2 flex flex-col gap-3"
-              initial={{ opacity: 0, x: -20 }}
+              className="absolute right-24 top-1/2 -translate-y-1/2 flex flex-col gap-3"
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
+              exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3 }}
             >
               {navigationItems.map((item, index) => {
@@ -99,6 +108,7 @@ export const SpeedNavigation = () => {
                   >
                     <NavLink
                       to={item.path}
+                      onClick={handleLinkClick}
                       className={`flex items-center gap-3 px-4 py-2 rounded-full bg-card border transition-all duration-300 group hover:border-primary/50 ${
                         isActive 
                           ? "border-primary neon-glow text-primary" 
@@ -129,7 +139,7 @@ export const SpeedNavigation = () => {
 
         {/* Compact Navigation Dots */}
         {!isExpanded && (
-          <div className="absolute left-24 top-1/2 -translate-y-1/2 flex flex-col gap-2">
+          <div className="absolute right-24 top-1/2 -translate-y-1/2 flex flex-col gap-2">
             {navigationItems.map((item, index) => {
               const isActive = item.path === "/" 
                 ? location.pathname === "/" 
@@ -139,6 +149,7 @@ export const SpeedNavigation = () => {
                 <NavLink
                   key={item.name}
                   to={item.path}
+                  onClick={handleLinkClick}
                   className="group"
                 >
                   <motion.div
@@ -158,7 +169,7 @@ export const SpeedNavigation = () => {
       </div>
 
       {/* Speed Lines Effect */}
-      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30 speed-lines" />
+      <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-8 h-0.5 bg-gradient-to-l from-transparent via-primary to-transparent opacity-30 speed-lines" />
     </motion.div>
   );
 };
