@@ -13,32 +13,32 @@ import speedTrail from "@/assets/speed-trail.jpg";
 export const About = () => {
   const sections = [
     {
-      title: "My First Ride",
+      title: "My Healthcare Calling",
       icon: Heart,
-      content: "It all started when I was 16. The moment I first sat on a bike, I knew this was my calling. The vibration of the engine, the potential energy waiting to be unleashed - it was pure magic.",
+      content: "Growing up, I always wanted to help people heal. Now as a nursing student, I'm learning that caring for others is just as thrilling as any ride - it's about saving lives and making a difference every single day.",
       color: "primary"
     },
     {
-      title: "Why I Ride Fast",
+      title: "Why Speed Heals My Soul",
       icon: Zap,
-      content: "Speed isn't just about going fast - it's about focus, precision, and living in the moment. When you're pushing the limits, there's no room for anything but pure concentration and skill.",
+      content: "After long days in clinical rotations or studying for exams, nothing clears my mind like the open road. Speed isn't just about going fast - it's my meditation, my escape, my way of feeling truly alive.",
       color: "secondary"
     },
     {
-      title: "My Dream Bike",
+      title: "Family Adventures",
       icon: Target,
-      content: "The Kawasaki Ninja H2R - 310hp of pure adrenaline. It's not just a bike, it's a statement. One day, I'll have one in my garage, and we'll paint the highways with our legacy.",
+      content: "My family thinks I'm crazy for loving speed, but they support my dreams anyway. Whether it's family hikes, beach trips, or teaching my little sister to be fearless, they're my anchor and my inspiration.",
       color: "accent"
     }
   ];
 
   const achievements = [
-    { label: "Years of Experience", value: 8, suffix: "+" },
-    { label: "Bikes Owned", value: 12, suffix: "" },
-    { label: "Track Days", value: 200, suffix: "+" },
-    { label: "Miles Traveled", value: 100, suffix: "K+" },
-    { label: "Top Speed", value: 300, suffix: " KM/H" },
-    { label: "Racing Wins", value: 25, suffix: "" }
+    { label: "Nursing GPA", value: 3.8, suffix: "/4.0" },
+    { label: "Clinical Hours", value: 800, suffix: "+" },
+    { label: "Patients Cared For", value: 150, suffix: "+" },
+    { label: "Miles Ridden", value: 50, suffix: "K+" },
+    { label: "Top Speed", value: 280, suffix: " KM/H" },
+    { label: "Adventures", value: 200, suffix: "+" }
   ];
 
   return (
@@ -58,7 +58,7 @@ export const About = () => {
               <span className="text-foreground">Gifty</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Speed is not just about velocity - it's about passion, precision, and the pursuit of perfection.
+              Nursing student, adventure seeker, speed enthusiast, and family-first person living life to the fullest.
             </p>
           </motion.div>
 
@@ -82,12 +82,12 @@ export const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="text-2xl font-bold">Gifty</h3>
-                  <p className="text-primary">Speed Enthusiast</p>
+                  <p className="text-primary">Nursing Student & Adventure Seeker</p>
                 </div>
               </div>
 
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-primary/20">
-                <h3 className="text-xl font-bold mb-4 text-primary">Quick Facts</h3>
+                <h3 className="text-xl font-bold mb-4 text-primary">Life Highlights</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {achievements.map((achievement, index) => (
                     <motion.div
@@ -153,12 +153,13 @@ export const About = () => {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-3xl font-bold text-center mb-8 text-primary">Skills & Expertise</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-primary">My Passions & Skills</h2>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                "High-Speed Racing", "Track Navigation", "Bike Mechanics", "Safety Protocols",
-                "Cornering Techniques", "Wheelie Control", "Stunt Riding", "Bike Modifications",
-                "Racing Strategy", "Weather Riding", "Group Riding", "Track Safety"
+                "Nursing Care", "Patient Advocacy", "Emergency Response", "IV Therapy",
+                "High-Speed Riding", "Track Navigation", "Bike Maintenance", "Safety Protocols",
+                "Mountain Hiking", "Photography", "Family Adventures", "Mentoring Students",
+                "Community Service", "Health Education", "Crisis Management", "Team Leadership"
               ].map((skill, index) => (
                 <motion.div
                   key={skill}
@@ -188,23 +189,24 @@ export const About = () => {
           >
             <div>
               <h2 className="text-3xl font-bold mb-6">
-                <span className="text-secondary">Tech</span>{" "}
-                <span className="text-foreground">Meets</span>{" "}
-                <span className="text-accent">Speed</span>
+                <span className="text-secondary">Life</span>{" "}
+                <span className="text-foreground">Balance</span>{" "}
+                <span className="text-accent">Journey</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Modern speed biking isn't just about raw power - it's about integrating cutting-edge 
-                technology with traditional riding skills. From HUD helmets to advanced traction 
-                control systems, technology enhances both safety and performance.
+                Balancing nursing school, family time, and my passion for speed isn't always easy, 
+                but it's taught me that life is about finding harmony between caring for others and 
+                caring for yourself. Every clinical rotation teaches me compassion, every family 
+                gathering reminds me what truly matters, and every ride clears my mind for whatever comes next.
               </p>
               <div className="flex gap-4">
                 <div className="flex items-center gap-2">
                   <Award className="w-5 h-5 text-primary" />
-                  <span className="text-sm">Safety First</span>
+                  <span className="text-sm">Academic Excellence</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="w-5 h-5 text-secondary" />
-                  <span className="text-sm">Peak Performance</span>
+                  <span className="text-sm">Adventure Spirit</span>
                 </div>
               </div>
             </div>
@@ -214,7 +216,7 @@ export const About = () => {
             >
               <img
                 src={bikerHelmet}
-                alt="Futuristic biker helmet with HUD"
+                alt="Life balance - nursing and adventure"
                 className="w-full rounded-2xl object-cover neon-glow-secondary"
               />
             </motion.div>
@@ -229,9 +231,9 @@ export const About = () => {
             className="mb-20"
           >
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-primary">My Racing Philosophy</h2>
+              <h2 className="text-3xl font-bold mb-6 text-primary">My Life Philosophy</h2>
               <p className="text-lg text-muted-foreground">
-                Speed is not just about going fast - it's about the harmony between rider, machine, and road.
+                Life is about balance, growth, and making a positive impact while staying true to who you are.
               </p>
             </div>
 
@@ -239,38 +241,38 @@ export const About = () => {
               {[
                 {
                   icon: Shield,
-                  title: "Safety First",
-                  description: "No thrill is worth your life. I always gear up properly and never compromise on safety equipment.",
+                  title: "Compassionate Care",
+                  description: "Every patient deserves dignity, respect, and the best care possible. Nursing has taught me that healing is both science and art.",
                   color: "primary"
                 },
                 {
                   icon: Flame,
-                  title: "Controlled Aggression",
-                  description: "Channel your passion into precision. Every aggressive move should be calculated and deliberate.",
+                  title: "Passionate Living",
+                  description: "Whether it's acing an exam or hitting 250km/h, I believe in giving everything your all and living without regrets.",
                   color: "secondary"
                 },
                 {
                   icon: Target,
-                  title: "Constant Improvement",
-                  description: "There's always something to learn, whether it's a new technique or understanding your bike better.",
+                  title: "Goal-Oriented",
+                  description: "From graduating nursing school to conquering new riding challenges, I set ambitious goals and work relentlessly to achieve them.",
                   color: "accent"
                 },
                 {
                   icon: Users,
-                  title: "Community Respect",
-                  description: "We share the road with everyone. Responsible riding builds respect for our community.",
+                  title: "Family Values",
+                  description: "My family is my foundation. They remind me what's truly important and keep me grounded through all of life's adventures.",
                   color: "primary"
                 },
                 {
                   icon: Wrench,
-                  title: "Know Your Machine",
-                  description: "Understanding every bolt and component of your bike makes you a better, safer rider.",
+                  title: "Continuous Learning",
+                  description: "From mastering new medical procedures to understanding bike mechanics, I'm always eager to learn and grow.",
                   color: "secondary"
                 },
                 {
                   icon: Trophy,
-                  title: "Compete with Honor",
-                  description: "Racing is about pushing limits while maintaining respect for opponents and the sport.",
+                  title: "Excellence in All",
+                  description: "Whether caring for patients or perfecting my riding technique, I strive for excellence in everything I do.",
                   color: "accent"
                 }
               ].map((philosophy, index) => (

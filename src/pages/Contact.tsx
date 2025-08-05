@@ -104,12 +104,12 @@ export const Contact = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-primary neon-pulse">Get In</span>{" "}
-              <span className="text-foreground">Touch</span>
+              <span className="text-primary neon-pulse">Let's</span>{" "}
+              <span className="text-foreground">Connect</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Have a question about speed biking? Want to collaborate? Or just want to chat about bikes? 
-              I'd love to hear from you!
+              Whether you want to chat about nursing school, share adventure stories, ask about family life, 
+              or discuss anything speed-related - I'd love to hear from you! Life is better when we connect.
             </p>
           </motion.div>
 
@@ -123,7 +123,7 @@ export const Contact = () => {
               <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/20">
                 <div className="flex items-center gap-3 mb-6">
                   <MessageSquare className="w-6 h-6 text-primary" />
-                  <h2 className="text-2xl font-bold text-primary">Send Message</h2>
+                  <h2 className="text-2xl font-bold text-primary">Share Your Story</h2>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -165,7 +165,7 @@ export const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      placeholder="What's this about?"
+                      placeholder="What would you like to talk about?"
                       required
                       className="bg-dark-surface border-primary/30 focus:border-primary"
                     />
@@ -179,7 +179,7 @@ export const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Tell me what's on your mind..."
+                      placeholder="Share what's on your mind - nursing questions, adventure stories, life advice, or anything else!"
                       required
                       rows={6}
                       className="bg-dark-surface border-primary/30 focus:border-primary resize-none"
@@ -234,7 +234,7 @@ export const Contact = () => {
 
               {/* Social Media */}
               <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/20">
-                <h2 className="text-2xl font-bold text-primary mb-6">Follow My Journey</h2>
+                <h2 className="text-2xl font-bold text-primary mb-6">Follow My Adventures</h2>
                 <div className="space-y-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -271,10 +271,10 @@ export const Contact = () => {
                 transition={{ delay: 1.0 }}
                 className="p-6 rounded-lg bg-speed-gradient text-center"
               >
-                <h3 className="font-bold text-lg mb-2 text-white">Quick Response Guarantee</h3>
+                <h3 className="font-bold text-lg mb-2 text-white">Always Here to Connect</h3>
                 <p className="text-white/90 text-sm">
-                  I personally read and respond to every message within 24 hours. 
-                  Your thoughts and questions matter to me!
+                  Whether you need study tips, adventure inspiration, or just want to share your own story - 
+                  I read every message and love connecting with fellow dreamers and doers!
                 </p>
               </motion.div>
             </motion.div>

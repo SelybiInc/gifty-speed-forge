@@ -11,67 +11,87 @@ import speedTrail from "@/assets/speed-trail.jpg";
 const blogPosts = [
   {
     id: 1,
-    title: "Mastering the Art of Cornering at High Speeds",
-    excerpt: "Learn the essential techniques for taking corners like a pro while maintaining maximum speed and safety.",
-    category: "Techniques",
+    title: "Balancing Nursing School and My Passion for Speed",
+    excerpt: "How I manage 12-hour clinical shifts and still find time for adrenaline-pumping rides on weekends.",
+    category: "Life Balance",
     date: "2024-01-15",
-    readTime: "5 min read",
+    readTime: "7 min read",
     image: speedTrail,
     featured: true
   },
   {
     id: 2,
-    title: "My First Track Day Experience",
-    excerpt: "Discover what it's really like to push your limits on a professional racing track for the first time.",
-    category: "Experiences",
-    date: "2024-01-10",
-    readTime: "8 min read",
+    title: "Family Adventures: Teaching My Sister to Hike",
+    excerpt: "Last weekend's mountain trail adventure with my little sister - she's becoming fearless just like me!",
+    category: "Family",
+    date: "2024-01-12",
+    readTime: "5 min read",
     image: speedTrail,
     featured: false
   },
   {
     id: 3,
-    title: "Top 5 Speed Bikes for Beginners",
-    excerpt: "A comprehensive guide to choosing your first speed bike, focusing on safety, performance, and value.",
-    category: "Reviews",
-    date: "2024-01-05",
+    title: "From ICU to Highway: How Nursing Made Me a Better Rider",
+    excerpt: "The life-saving skills I learn in the hospital actually make me more aware and safer on the road.",
+    category: "Nursing",
+    date: "2024-01-10",
     readTime: "6 min read",
     image: speedTrail,
     featured: false
   },
   {
     id: 4,
-    title: "Safety Gear That Saved My Life",
-    excerpt: "Why investing in quality safety equipment is the most important decision any rider can make.",
-    category: "Safety",
-    date: "2024-01-01",
+    title: "Study Break Speed Sessions: Mental Health on Two Wheels",
+    excerpt: "Why a quick ride between study sessions is the best therapy for nursing school stress.",
+    category: "Mental Health",
+    date: "2024-01-08",
     readTime: "4 min read",
     image: speedTrail,
     featured: false
   },
   {
     id: 5,
-    title: "Night Riding: Beauty and Dangers",
-    excerpt: "The unique challenges and incredible experiences of riding through the night on empty highways.",
-    category: "Experiences",
-    date: "2023-12-28",
-    readTime: "7 min read",
+    title: "Weekend Warriors: Hiking vs Riding",
+    excerpt: "Comparing the rush of mountain peaks with the thrill of speed - both feed my soul differently.",
+    category: "Adventure",
+    date: "2024-01-05",
+    readTime: "8 min read",
     image: speedTrail,
     featured: false
   },
   {
     id: 6,
-    title: "Bike Maintenance for Speed Enthusiasts",
-    excerpt: "Essential maintenance tips to keep your speed bike performing at its peak for years to come.",
-    category: "Maintenance",
+    title: "Clinical Rotation Stories: Real Life Heroes",
+    excerpt: "The patients who inspire me every day and remind me why healing others is just as important as personal thrills.",
+    category: "Nursing",
+    date: "2024-01-01",
+    readTime: "6 min read",
+    image: speedTrail,
+    featured: false
+  },
+  {
+    id: 7,
+    title: "Safety Gear That Saved My Life (On and Off the Bike)",
+    excerpt: "From PPE in the hospital to protective gear on the track - why safety is never negotiable.",
+    category: "Safety",
+    date: "2023-12-28",
+    readTime: "5 min read",
+    image: speedTrail,
+    featured: false
+  },
+  {
+    id: 8,
+    title: "Family Game Night vs Track Night: Finding Balance",
+    excerpt: "Sometimes the best adventure is staying home with family - learning when to choose heart over speed.",
+    category: "Family",
     date: "2023-12-25",
-    readTime: "10 min read",
+    readTime: "4 min read",
     image: speedTrail,
     featured: false
   }
 ];
 
-const categories = ["All", "Techniques", "Experiences", "Reviews", "Safety", "Maintenance"];
+const categories = ["All", "Life Balance", "Nursing", "Family", "Adventure", "Mental Health", "Safety"];
 
 export const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -97,11 +117,12 @@ export const Blog = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-primary neon-pulse">Speed</span>{" "}
+              <span className="text-primary neon-pulse">Life</span>{" "}
               <span className="text-foreground">Chronicles</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Stories from the road, technical insights, and everything about the world of speed biking.
+              From nursing school challenges to speed adventures, family moments to personal growth - 
+              join me on this journey of balancing passion with purpose.
             </p>
           </motion.div>
 

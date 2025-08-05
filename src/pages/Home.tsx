@@ -44,7 +44,7 @@ export const Home = () => {
               >
                 <span className="text-primary neon-pulse">GIFTY</span>
                 <br />
-                <span className="text-foreground">Speed Demon</span>
+                <span className="text-foreground">Adventurer & Healer</span>
               </motion.h1>
 
               {/* Tagline */}
@@ -54,7 +54,7 @@ export const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Racing Through Life, One Ride at a Time
+                Nursing Student by Day, Speed Enthusiast by Heart, Adventure Seeker Always
               </motion.p>
 
               {/* Stats */}
@@ -67,7 +67,7 @@ export const Home = () => {
                 {[
                   { icon: Zap, label: "Max Speed", value: 300, suffix: " KM/H" },
                   { icon: Wind, label: "Years Riding", value: 8, suffix: "+" },
-                  { icon: Star, label: "Adventures", value: 1000, suffix: "+" },
+                  { icon: Star, label: "Adventures", value: 500, suffix: "+" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -132,7 +132,7 @@ export const Home = () => {
           </motion.div>
         </section>
 
-        {/* Quick About Section */}
+        {/* About Section */}
         <section className="relative py-20 px-6">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -146,11 +146,25 @@ export const Home = () => {
                 Welcome to My World
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm Gifty, a passionate speed bike enthusiast who lives for the thrill of the ride. 
-                From the roar of the engine to the wind rushing past, every journey is an adventure 
-                waiting to unfold. Join me as I share my experiences, tips, and the pure joy of 
-                speed biking.
+                I'm Gifty, a nursing student with a passion for speed, adventure, and helping others heal. 
+                When I'm not studying anatomy or caring for patients, you'll find me pushing limits on two wheels, 
+                exploring mountain trails, or spending precious time with my family. Life is about balance - 
+                between the adrenaline rush of speed and the gentle touch of healing.
               </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div className="p-4 bg-card/50 rounded-lg">
+                  <h3 className="font-semibold text-primary mb-2">🏥 Future Nurse</h3>
+                  <p className="text-sm text-muted-foreground">Dedicated to healing and caring for others</p>
+                </div>
+                <div className="p-4 bg-card/50 rounded-lg">
+                  <h3 className="font-semibold text-secondary mb-2">🏍️ Speed Enthusiast</h3>
+                  <p className="text-sm text-muted-foreground">Living for the thrill of the ride</p>
+                </div>
+                <div className="p-4 bg-card/50 rounded-lg">
+                  <h3 className="font-semibold text-accent mb-2">👨‍👩‍👧‍👦 Family First</h3>
+                  <p className="text-sm text-muted-foreground">Cherishing moments with loved ones</p>
+                </div>
+              </div>
               <Button 
                 variant="outline" 
                 className="border-secondary text-secondary hover:bg-secondary/10 mt-6"
@@ -183,28 +197,28 @@ export const Home = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Midnight Highway Rush",
-                  description: "Racing through empty highways under the stars at 280km/h",
+                  title: "Night Study & Ride Session",
+                  description: "Balancing nursing textbooks and midnight rides - finding peace in both worlds",
                   image: speedTrail,
-                  category: "Night Ride",
+                  category: "Life Balance",
                   date: "2 days ago",
-                  duration: "3 hours"
+                  duration: "4 hours"
                 },
                 {
-                  title: "Track Day Triumph",
-                  description: "Personal best lap time achieved at Silverstone Circuit",
+                  title: "Family Weekend Adventure",
+                  description: "Took my little sister on her first mountain hiking trip - she loved it!",
                   image: speedTrail,
-                  category: "Racing",
+                  category: "Family Time",
                   date: "1 week ago",
-                  duration: "8 hours"
+                  duration: "Full Day"
                 },
                 {
-                  title: "Mountain Pass Challenge",
-                  description: "Conquering the Alps on two wheels with breathtaking views",
+                  title: "Hospital Clinical & Track Day",
+                  description: "From saving lives in the morning to living life at 250km/h in the evening",
                   image: speedTrail,
                   category: "Adventure",
                   date: "2 weeks ago",
-                  duration: "Full Day"
+                  duration: "12 hours"
                 }
               ].map((adventure, index) => (
                 <motion.div
@@ -326,10 +340,10 @@ export const Home = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { icon: Trophy, label: "Race Wins", value: 25, color: "primary" },
-                { icon: Users, label: "Followers", value: 50, suffix: "K+", color: "secondary" },
-                { icon: Star, label: "Track Records", value: 12, color: "accent" },
-                { icon: MapPin, label: "Countries Ridden", value: 18, color: "primary" },
+                { icon: Trophy, label: "Clinical Hours", value: 500, suffix: "+", color: "primary" },
+                { icon: Users, label: "Lives Touched", value: 200, suffix: "+", color: "secondary" },
+                { icon: Star, label: "Adventures", value: 150, suffix: "+", color: "accent" },
+                { icon: MapPin, label: "Miles Ridden", value: 25, suffix: "K+", color: "primary" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -368,12 +382,13 @@ export const Home = () => {
               className="space-y-8"
             >
               <h2 className="text-3xl md:text-4xl font-bold">
-                <span className="text-secondary">Join The</span>{" "}
-                <span className="text-foreground">Speed Community</span>
+                <span className="text-secondary">Join My</span>{" "}
+                <span className="text-foreground">Journey</span>
               </h2>
               <p className="text-lg text-muted-foreground">
-                Connect with fellow speed enthusiasts, share your rides, and learn from experienced bikers.
-                Whether you're a beginner or a seasoned rider, there's a place for you here.
+                Follow along as I navigate nursing school, chase adventures, and share the ups and downs 
+                of balancing passion with purpose. Whether you're into healthcare, speed, adventure, or just 
+                living life fully - there's something here for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -381,7 +396,7 @@ export const Home = () => {
                   size="lg"
                   className="px-8 py-4 rounded-full"
                 >
-                  Join Our Community
+                  Follow My Story
                   <Users className="ml-2 w-5 h-5" />
                 </Button>
                 <Button 
@@ -389,7 +404,7 @@ export const Home = () => {
                   size="lg"
                   className="border-accent text-accent hover:bg-accent/10 px-8 py-4 rounded-full"
                 >
-                  Follow on Instagram
+                  Read My Blog
                 </Button>
               </div>
             </motion.div>
