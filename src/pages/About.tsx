@@ -295,7 +295,7 @@ export const About = () => {
             </div>
           </motion.section>
 
-          {/* Bike Collection Section */}
+          {/* Personal Life Sections */}
           <motion.section
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -306,91 +306,196 @@ export const About = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-6">
                 <span className="text-accent">My</span>{" "}
-                <span className="text-foreground">Garage</span>
+                <span className="text-foreground">World</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Each bike in my collection tells a story and serves a purpose. From track beasts to touring companions.
+                The different facets of my life that make me who I am - each one important, each one meaningful.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  name: "Kawasaki Ninja ZX-10R",
-                  type: "Track Beast",
-                  specs: "998cc • 200hp • 0-100 in 2.8s",
-                  description: "My go-to machine for track days. Pure adrenaline wrapped in carbon fiber.",
-                  image: speedTrail,
-                  status: "Current"
-                },
-                {
-                  name: "Yamaha R1M",
-                  type: "Racing Machine",
-                  specs: "998cc • 200hp • Electronics Package",
-                  description: "State-of-the-art electronics meet raw power. Perfect for competitive racing.",
-                  image: speedTrail,
-                  status: "Current"
-                },
-                {
-                  name: "Ducati Panigale V4",
-                  type: "Italian Stallion",
-                  specs: "1103cc • 214hp • Pure Emotion",
-                  description: "When you want to feel the passion of Italian engineering in every twist.",
-                  image: speedTrail,
-                  status: "Dream"
-                },
-                {
-                  name: "BMW S1000RR",
-                  type: "Precision Tool",
-                  specs: "999cc • 207hp • German Engineering",
-                  description: "Clinical precision meets explosive performance. The thinking rider's choice.",
-                  image: speedTrail,
-                  status: "Previous"
-                }
-              ].map((bike, index) => (
-                <motion.div
-                  key={bike.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover-glow speed-transition">
-                    <div className="relative">
-                      <img
-                        src={bike.image}
-                        alt={bike.name}
-                        className="w-full h-48 object-cover"
-                      />
-                      <div className="absolute top-4 right-4">
-                        <Badge 
-                          variant="outline" 
-                          className={`${
-                            bike.status === 'Current' ? 'bg-primary/80 text-white border-primary' :
-                            bike.status === 'Dream' ? 'bg-accent/80 text-white border-accent' :
-                            'bg-secondary/80 text-white border-secondary'
-                          }`}
-                        >
-                          {bike.status}
-                        </Badge>
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* My Bike */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover-glow speed-transition h-full">
+                  <div className="relative">
+                    <img
+                      src={speedTrail}
+                      alt="My trusted companion"
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-primary/80 text-white">My Ride</Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-xl font-bold">Yamaha R3</h3>
+                      <p className="text-sm opacity-90">My Trusted Companion</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-muted-foreground text-sm mb-4">
+                      She's not the fastest bike out there, but she's mine. Every scratch tells a story, 
+                      every mile we've shared has taught me something. From my first nervous ride to confident 
+                      highway cruising - we've grown together. She's seen me through study stress, celebrated 
+                      good grades with victory laps, and been my escape when life gets overwhelming.
+                    </p>
+                    <div className="flex items-center gap-4 text-xs text-primary">
+                      <span>• 25,000+ miles together</span>
+                      <span>• Perfect for learning</span>
+                      <span>• My therapy machine</span>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+
+              {/* My Outfit */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-secondary/20 hover-glow speed-transition h-full">
+                  <div className="relative">
+                    <img
+                      src={speedTrail}
+                      alt="Style for every adventure"
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-secondary/80 text-white">My Style</Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-xl font-bold">Gear & Style</h3>
+                      <p className="text-sm opacity-90">Outfit for Every Adventure</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-muted-foreground text-sm mb-4">
+                      From scrubs to leathers, hiking boots to heels - I believe your outfit should match your mission. 
+                      Nursing scrubs make me feel professional and ready to care. Riding gear makes me feel invincible 
+                      and safe. Casual wear for family time keeps me comfortable and approachable. Each outfit is armor 
+                      for a different adventure in life.
+                    </p>
+                    <div className="grid grid-cols-3 gap-2 text-xs">
+                      <div className="text-center p-2 bg-dark-surface rounded">
+                        <div className="text-primary font-semibold">👩‍⚕️ Scrubs</div>
+                        <div className="text-muted-foreground">Professional</div>
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute bottom-4 left-4 text-white">
-                        <h3 className="text-lg font-bold">{bike.name}</h3>
-                        <p className="text-sm opacity-90">{bike.type}</p>
+                      <div className="text-center p-2 bg-dark-surface rounded">
+                        <div className="text-secondary font-semibold">🏍️ Leathers</div>
+                        <div className="text-muted-foreground">Protected</div>
+                      </div>
+                      <div className="text-center p-2 bg-dark-surface rounded">
+                        <div className="text-accent font-semibold">👕 Casual</div>
+                        <div className="text-muted-foreground">Comfortable</div>
                       </div>
                     </div>
-                    <div className="p-6">
-                      <p className="text-primary font-mono text-sm mb-3">{bike.specs}</p>
-                      <p className="text-muted-foreground text-sm">{bike.description}</p>
+                  </div>
+                </Card>
+              </motion.div>
+
+              {/* On Duty */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-accent/20 hover-glow speed-transition h-full">
+                  <div className="relative">
+                    <img
+                      src={speedTrail}
+                      alt="Caring for others"
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-accent/80 text-white">On Duty</Badge>
                     </div>
-                  </Card>
-                </motion.div>
-              ))}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-xl font-bold">Nursing Life</h3>
+                      <p className="text-sm opacity-90">Caring & Healing</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-muted-foreground text-sm mb-4">
+                      When I put on my scrubs, I become someone's hope. Every shift teaches me something new about 
+                      resilience, compassion, and the strength of the human spirit. I've held hands with scared patients, 
+                      celebrated recovery milestones, and learned that healing is both science and heart. The ICU nights 
+                      are long, but knowing I'm making a difference makes every moment worth it.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="text-xs border-accent text-accent">Emergency Care</Badge>
+                      <Badge variant="outline" className="text-xs border-accent text-accent">Patient Advocacy</Badge>
+                      <Badge variant="outline" className="text-xs border-accent text-accent">Team Leadership</Badge>
+                      <Badge variant="outline" className="text-xs border-accent text-accent">Critical Thinking</Badge>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+
+              {/* My Fam */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover-glow speed-transition h-full">
+                  <div className="relative">
+                    <img
+                      src={speedTrail}
+                      alt="My amazing family"
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-primary/80 text-white">My Heart</Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-xl font-bold">My Family</h3>
+                      <p className="text-sm opacity-90">My Foundation</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Mom thinks I'm crazy for loving speed but supports every dream. Dad taught me to be fearless 
+                      but responsible. My little sister looks up to me (scary thought!), and I want to show her that 
+                      girls can do anything. My brother keeps me grounded with his terrible jokes. They're my 
+                      cheerleaders, my critics, and my safe harbor all at once.
+                    </p>
+                    <div className="grid grid-cols-2 gap-3 text-xs">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                        <span>Mom: My biggest supporter</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span>Dad: My safety instructor</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-accent rounded-full"></div>
+                        <span>Sister: My adventure buddy</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                        <span>Brother: My comedian</span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
             </div>
           </motion.section>
 
-          {/* Journey Timeline */}
+          {/* Life Journey Timeline */}
           <motion.section
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -399,8 +504,8 @@ export const About = () => {
             className="mb-20"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-primary">My Journey</h2>
-              <p className="text-muted-foreground">The milestones that shaped my passion for speed</p>
+              <h2 className="text-3xl font-bold mb-6 text-primary">My Life Journey</h2>
+              <p className="text-muted-foreground">The defining moments that shaped who I am today</p>
             </div>
 
             <div className="relative">
@@ -410,38 +515,45 @@ export const About = () => {
               {[
                 {
                   year: "2016",
-                  title: "First Ride",
-                  description: "Got my first bike - a Ninja 300. The moment I felt that power, I knew this was my calling.",
+                  title: "First Bike, First Freedom",
+                  description: "Got my license and my first bike. Mom cried, Dad smiled, and I felt the world open up with infinite possibilities.",
                   icon: Heart,
                   side: "left"
                 },
                 {
                   year: "2018",
-                  title: "First Track Day",
-                  description: "Took my skills to the track. Learning proper racing lines and safety protocols.",
+                  title: "Choosing My Path",
+                  description: "Decided to pursue nursing after volunteering at a local hospital. Realized I wanted to dedicate my life to healing others.",
                   icon: Target,
                   side: "right"
                 },
                 {
                   year: "2020",
-                  title: "Racing License",
-                  description: "Earned my racing license and started competing in amateur championships.",
+                  title: "Nursing School Begins",
+                  description: "Started nursing program during the pandemic. Learned that courage isn't the absence of fear - it's caring despite it.",
                   icon: Award,
                   side: "left"
                 },
                 {
                   year: "2022",
-                  title: "First Win",
-                  description: "Won my first regional championship race. The adrenaline was indescribable.",
-                  icon: Trophy,
+                  title: "Family Adventure Leader",
+                  description: "Became the one who plans family adventures - from mountain hikes to beach trips. Teaching my sister to be fearless.",
+                  icon: Users,
                   side: "right"
                 },
                 {
-                  year: "2024",
-                  title: "Speed Influencer",
-                  description: "Started sharing my passion online, building a community of fellow speed enthusiasts.",
-                  icon: Users,
+                  year: "2023",
+                  title: "First Clinical Rotation",
+                  description: "Stepped into the ICU for the first time as a student nurse. Held my first patient's hand and knew I was exactly where I belonged.",
+                  icon: Star,
                   side: "left"
+                },
+                {
+                  year: "2024",
+                  title: "Living My Truth",
+                  description: "Balancing nursing school, family time, and my passion for speed. Learning that you don't have to choose just one dream.",
+                  icon: Trophy,
+                  side: "right"
                 }
               ].map((milestone, index) => (
                 <motion.div
@@ -487,10 +599,10 @@ export const About = () => {
             className="text-center"
           >
             <Card className="p-12 bg-speed-gradient">
-              <h2 className="text-3xl font-bold text-white mb-6">Ready to Join the Ride?</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">Want to Connect?</h2>
               <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-                Whether you're a beginner looking to learn or an experienced rider wanting to connect, 
-                I'm here to share the passion for speed and the open road.
+                Whether you're a fellow nursing student, adventure seeker, or just someone trying to balance 
+                multiple passions - I'd love to hear your story. Let's inspire each other to live fully!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -498,14 +610,14 @@ export const About = () => {
                   size="lg"
                   className="border-white text-white hover:bg-white hover:text-primary bg-transparent"
                 >
-                  Follow My Journey
+                  Share Your Story
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
                   className="border-white text-white hover:bg-white hover:text-primary bg-transparent"
                 >
-                  Get Riding Tips
+                  Follow My Journey
                 </Button>
               </div>
             </Card>
