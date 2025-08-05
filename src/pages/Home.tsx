@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Zap, Wind, Star, Trophy, Users, Play, Calendar, Clock, MapPin } from "lucide-react";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 import heroImage from "@/assets/hero-gifty-bike.jpg";
 import speedTrail from "@/assets/speed-trail.jpg";
 import giftyPortrait from "@/assets/gifty-portrait.jpg";
@@ -64,9 +65,9 @@ export const Home = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 {[
-                  { icon: Zap, label: "Max Speed", value: "300 KM/H" },
-                  { icon: Wind, label: "Years Riding", value: "8+" },
-                  { icon: Star, label: "Adventures", value: "1000+" },
+                  { icon: Zap, label: "Max Speed", value: 300, suffix: " KM/H" },
+                  { icon: Wind, label: "Years Riding", value: 8, suffix: "+" },
+                  { icon: Star, label: "Adventures", value: 1000, suffix: "+" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -77,7 +78,14 @@ export const Home = () => {
                     transition={{ delay: 0.8 + index * 0.1 }}
                   >
                     <stat.icon className="w-8 h-8 text-primary mb-2" />
-                    <span className="text-2xl font-bold text-primary">{stat.value}</span>
+                    <span className="text-2xl font-bold text-primary">
+                      <AnimatedCounter 
+                        end={stat.value} 
+                        suffix={stat.suffix} 
+                        duration={2500}
+                        startOnView={false}
+                      />
+                    </span>
                     <span className="text-muted-foreground text-sm">{stat.label}</span>
                   </motion.div>
                 ))}
@@ -318,10 +326,10 @@ export const Home = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { icon: Trophy, label: "Race Wins", value: "25", color: "primary" },
-                { icon: Users, label: "Followers", value: "50K+", color: "secondary" },
-                { icon: Star, label: "Track Records", value: "12", color: "accent" },
-                { icon: MapPin, label: "Countries Ridden", value: "18", color: "primary" },
+                { icon: Trophy, label: "Race Wins", value: 25, color: "primary" },
+                { icon: Users, label: "Followers", value: 50, suffix: "K+", color: "secondary" },
+                { icon: Star, label: "Track Records", value: 12, color: "accent" },
+                { icon: MapPin, label: "Countries Ridden", value: 18, color: "primary" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -334,7 +342,14 @@ export const Home = () => {
                   <div className={`w-16 h-16 rounded-full bg-${stat.color}/20 text-${stat.color} flex items-center justify-center mx-auto mb-4`}>
                     <stat.icon className="w-8 h-8" />
                   </div>
-                  <div className={`text-3xl font-bold text-${stat.color} mb-2`}>{stat.value}</div>
+                  <div className={`text-3xl font-bold text-${stat.color} mb-2`}>
+                    <AnimatedCounter 
+                      end={stat.value} 
+                      suffix={stat.suffix || ""} 
+                      duration={2000}
+                      startOnView={true}
+                    />
+                  </div>
                   <div className="text-muted-foreground text-sm">{stat.label}</div>
                 </motion.div>
               ))}

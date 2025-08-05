@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, Zap, Target, Award, Clock, MapPin, Wrench, Shield, Flame, Trophy, Users, Star } from "lucide-react";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 import giftyPortrait from "@/assets/gifty-portrait.jpg";
 import bikerHelmet from "@/assets/biker-helmet-hud.jpg";
 import speedTrail from "@/assets/speed-trail.jpg";
@@ -32,12 +33,12 @@ export const About = () => {
   ];
 
   const achievements = [
-    { label: "Years of Experience", value: "8+" },
-    { label: "Bikes Owned", value: "12" },
-    { label: "Track Days", value: "200+" },
-    { label: "Miles Traveled", value: "100K+" },
-    { label: "Top Speed", value: "300 KM/H" },
-    { label: "Racing Wins", value: "25" }
+    { label: "Years of Experience", value: 8, suffix: "+" },
+    { label: "Bikes Owned", value: 12, suffix: "" },
+    { label: "Track Days", value: 200, suffix: "+" },
+    { label: "Miles Traveled", value: 100, suffix: "K+" },
+    { label: "Top Speed", value: 300, suffix: " KM/H" },
+    { label: "Racing Wins", value: 25, suffix: "" }
   ];
 
   return (
@@ -96,7 +97,14 @@ export const About = () => {
                       transition={{ delay: 0.4 + index * 0.1 }}
                       className="text-center p-3 bg-dark-surface rounded-lg"
                     >
-                      <div className="text-lg font-bold text-primary">{achievement.value}</div>
+                      <div className="text-lg font-bold text-primary">
+                        <AnimatedCounter 
+                          end={achievement.value} 
+                          suffix={achievement.suffix} 
+                          duration={1500}
+                          startOnView={true}
+                        />
+                      </div>
                       <div className="text-sm text-muted-foreground">{achievement.label}</div>
                     </motion.div>
                   ))}
