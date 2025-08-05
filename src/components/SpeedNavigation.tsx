@@ -29,7 +29,7 @@ export const SpeedNavigation = () => {
 
   return (
     <motion.div
-      className="fixed left-6 top-1/2 -translate-y-1/2 z-50"
+      className="fixed left-6 top-6 z-50"
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.3 }}
@@ -87,7 +87,7 @@ export const SpeedNavigation = () => {
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              className="absolute left-24 top-1/2 -translate-y-1/2 flex flex-col gap-3"
+              className="absolute left-24 top-0 flex flex-col gap-3"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
@@ -109,10 +109,10 @@ export const SpeedNavigation = () => {
                     <NavLink
                       to={item.path}
                       onClick={handleLinkClick}
-                      className={`flex items-center gap-3 px-4 py-2 rounded-full bg-card border transition-all duration-300 group hover:border-primary/50 ${
+                      className={`flex items-center gap-3 px-4 py-2 rounded-full bg-card/95 backdrop-blur-md border transition-all duration-300 group hover:border-primary/50 shadow-lg ${
                         isActive 
-                          ? "border-primary neon-glow text-primary" 
-                          : "border-border hover:bg-card/80"
+                          ? "border-primary neon-glow text-primary bg-card" 
+                          : "border-border hover:bg-card/90"
                       }`}
                     >
                       <div className={`p-2 rounded-full transition-all duration-300 ${
@@ -139,7 +139,7 @@ export const SpeedNavigation = () => {
 
         {/* Compact Navigation Dots */}
         {!isExpanded && (
-          <div className="absolute left-24 top-1/2 -translate-y-1/2 flex flex-col gap-2">
+          <div className="absolute left-24 top-0 flex flex-col gap-2">
             {navigationItems.map((item, index) => {
               const isActive = item.path === "/" 
                 ? location.pathname === "/" 
@@ -169,7 +169,7 @@ export const SpeedNavigation = () => {
       </div>
 
       {/* Speed Lines Effect */}
-      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30 speed-lines" />
+      <div className="absolute -left-10 top-10 w-8 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30 speed-lines" />
     </motion.div>
   );
 };
